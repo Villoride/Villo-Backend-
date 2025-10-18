@@ -24,7 +24,7 @@ public class AuthWeb {
 
     private final UserRepository userRepository;
     private final OtpService otpService;
-    private final SmsService smsService;      // inject Twilio sms service
+    private final SmsService smsService;
 
     @PostMapping("/send-otp")
     public ResponseEntity<?> sendOtp(@RequestBody LoginRequest loginRequest) {
