@@ -22,15 +22,15 @@ public class BookingRepository {
         BookingsTableStatus jooqStatus =
                 BookingsTableStatus.valueOf(bookingRequestDto.getStatus().toLowerCase());
 
-        dslContext.insertInto(BOOKINGS_TABLE)
-                    .set(BOOKINGS_TABLE.CUSTOMER_ID, bookingRequestDto.getCustomerId())
-                    .set(BOOKINGS_TABLE.DRIVER_ID, bookingRequestDto.getDriverId())
-                    .set(BOOKINGS_TABLE.VEHICLE_ID, bookingRequestDto.getVehicleId())
-                    .set(BOOKINGS_TABLE.PICKUP_LOCATION_ID, bookingRequestDto.getPickupLocationId())
-                    .set(BOOKINGS_TABLE.DROP_LOCATION_ID, bookingRequestDto.getDropLocationId())
-                    .set(BOOKINGS_TABLE.STATUS, jooqStatus)
-                    .set(BOOKINGS_TABLE.FARE, bookingRequestDto.getFare())
-                    .set(BOOKINGS_TABLE.CREATED_AT, LocalDateTime.now())
-                    .execute();
+//        dslContext.insertInto(BOOKINGS_TABLE)
+//                  //  .set(BOOKINGS_TABLE.CUSTOMER_ID, bookingRequestDto.getCustomerId())
+//                    //.set(BOOKINGS_TABLE.DRIVER_ID, bookingRequestDto.getDriverId())
+//                    .set(BOOKINGS_TABLE.VEHICLE_ID, bookingRequestDto.getVehicleId())
+//                    .set(BOOKINGS_TABLE.PICKUP_LOCATION_ID, bookingRequestDto.getPickupLocationId())
+//                    .set(BOOKINGS_TABLE.DROP_LOCATION_ID, bookingRequestDto.getDropLocationId())
+//                    .set(BOOKINGS_TABLE.STATUS, jooqStatus)
+//                    .set(BOOKINGS_TABLE.FARE, bookingRequestDto.getFare())
+//                    .set(BOOKINGS_TABLE.CREATED_AT, LocalDateTime.now())
+//                    .execute();
         }
 }

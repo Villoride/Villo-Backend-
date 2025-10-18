@@ -29,7 +29,7 @@ public class VehiclesRepository {
                 VehiclesTableStatus.valueOf(vehicleRequestDto.getStatus().toLowerCase());
 
         dslContext.insertInto(VEHICLES_TABLE)
-                .set(VEHICLES_TABLE.USER_ID, vehicleRequestDto.getUserId())
+               // .set(VEHICLES_TABLE.USER_ID, vehicleRequestDto.getUserId())
                 .set(VEHICLES_TABLE.VEHICLE_NUMBER, vehicleRequestDto.getVehicleNumber())
                 .set(VEHICLES_TABLE.VEHICLE_TYPE, jooqType)   // ✅ correct enum
                 .set(VEHICLES_TABLE.CAPACITY, vehicleRequestDto.getCapacity())

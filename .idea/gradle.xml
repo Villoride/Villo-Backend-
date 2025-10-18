@@ -5,6 +5,7 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/villo" />
+        <option name="gradleHome" value="C:\gradle-8.14.3-bin\gradle-8.14.3" />
         <option name="gradleJvm" value="24" />
       </GradleProjectSettings>
     </option>
