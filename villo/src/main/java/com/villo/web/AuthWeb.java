@@ -18,8 +18,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@
-        RequestMapping("/villo/auth")
+@RequestMapping("/villo/auth")
 public class AuthWeb {
 
     private final UserRepository userRepository;
