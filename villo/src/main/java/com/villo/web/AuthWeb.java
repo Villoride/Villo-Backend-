@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -56,8 +57,19 @@ public class AuthWeb {
         boolean isValid = otpService.validateOtp(request.getUserId(), request.getOtp());
 
         if (!isValid) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("message","Invalid/expired OTP"));
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("message", "Invalid or expired OTP"));
         }
-        return ResponseEntity.ok(Map.of("message", "Login success", "userId", request.getUserId()));
+
+        String role = userRepository.findByUserId(request.getUserId())
+                .map(user -> user.getRole().name())  //
+                .orElse("USER");
+
+        return ResponseEntity.ok(Map.of(
+                "message", "Login success",
+                "userId", request.getUserId(),
+                "role", role
+        ));
     }
+
 }
