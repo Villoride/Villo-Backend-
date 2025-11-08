@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "bookings_table")
 @Data
@@ -33,6 +35,9 @@ public class BookingEntity {
 
     private Double fare_estimate;
     private Double fare_final;
+    private LocalDateTime startTime;
+
+    private LocalDateTime endTime;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod payment_method = PaymentMethod.CASH;

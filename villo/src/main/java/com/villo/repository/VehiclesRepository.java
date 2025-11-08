@@ -1,7 +1,6 @@
 package com.villo.repository;
 
-import com.villlo.villo.jooq.enums.VehiclesTableStatus;
-import com.villlo.villo.jooq.enums.VehiclesTableVehicleType;
+
 import com.villo.model.VehicleRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -20,11 +19,11 @@ public class VehiclesRepository {
 
     public void createVehicles(VehicleRequestDto vehicleRequestDto) {
 
-        // Map DTO VehicleType (CAR) -> jOOQ enum (car)
+       /* // Map DTO VehicleType (CAR) -> jOOQ enum (car)
         VehiclesTableVehicleType jooqType =
                 VehiclesTableVehicleType.valueOf(vehicleRequestDto.getType().toLowerCase());
-
-        // Map DTO Status (ACTIVE) -> jOOQ enum (active)
+*/
+     /*   // Map DTO Status (ACTIVE) -> jOOQ enum (active)
         VehiclesTableStatus jooqStatus =
                 VehiclesTableStatus.valueOf(vehicleRequestDto.getStatus().toLowerCase());
 
@@ -36,8 +35,8 @@ public class VehiclesRepository {
                 .set(VEHICLES_TABLE.CREATED_AT, LocalDateTime.now())
                 .set(VEHICLES_TABLE.STATUS, jooqStatus) // ✅ correct enum
                 .execute();
+    }*/
     }
-
 }
 
 
